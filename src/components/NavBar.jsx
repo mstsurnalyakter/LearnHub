@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react";
-// import { useNavigation } from "react-router";
 
 const NavBar = () => {
   const [theme, setTheme] = useState("light");
-  // const [isLight, setIsLight] = useState(true);
 
   const handleToggle = (e) => {
     if (e.target.checked) {
@@ -19,8 +17,6 @@ const NavBar = () => {
     document.querySelector("html").setAttribute("data-theme", localTheme);
   }, [theme]);
 
-  // const navigation = useNavigation();
-  // console.log(navigation);
 
   return (
     <div className="bg-base-100 shadow-xl fixed z-10 w-full">
@@ -77,7 +73,7 @@ const NavBar = () => {
             </ul>
           </div>
           {/* theme controller start*/}
-          <label className="flex cursor-pointer gap-2">
+          <label className="flex cursor-pointer ml-1 gap-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
@@ -95,7 +91,6 @@ const NavBar = () => {
             <input
               onChange={handleToggle}
               type="checkbox"
-              value="synthwave"
               className="toggle theme-controller"
             />
             <svg
