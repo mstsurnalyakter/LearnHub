@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
   const [theme, setTheme] = useState("light");
@@ -41,17 +42,32 @@ const NavBar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 font-bold text-xl  shadow bg-base-100 rounded-box w-52"
+              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 text-xl  shadow bg-base-100 rounded-box w-52"
             >
-              <li>
-                <a>Home</a>
-              </li>
-              <li>
-                <a>Blogs</a>
-              </li>
-              <li>
-                <a>Bookmarks</a>
-              </li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? "text-primary font-bold underline" : "font-bold"
+                }
+                to={"/"}
+              >
+                Home
+              </NavLink>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? "text-primary font-bold underline" : "font-bold"
+                }
+                to={"/blogs"}
+              >
+                Blogs
+              </NavLink>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? "text-primary font-bold underline" : "font-bold"
+                }
+                to={"/bookmarks"}
+              >
+                Bookmarks
+              </NavLink>
             </ul>
           </div>
           <a className="text-3xl text-secondary font-bold lg:text-4xl gap-0">
@@ -60,16 +76,31 @@ const NavBar = () => {
         </div>
         <div className="navbar-end">
           <div className="navbar-center hidden lg:flex">
-            <ul className="menu font-bold text-xl menu-horizontal px-1">
-              <li>
-                <a>Home</a>
-              </li>
-              <li className="text-primary underline">
-                <a>Blogs</a>
-              </li>
-              <li>
-                <a>Bookmarks</a>
-              </li>
+            <ul className="menu space-x-4 font-bold text-xl menu-horizontal px-1">
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? "text-primary font-bold underline" : "font-bold"
+                }
+                to={"/"}
+              >
+                Home
+              </NavLink>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? "text-primary font-bold underline" : "font-bold"
+                }
+                to={"/blogs"}
+              >
+                Blogs
+              </NavLink>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? "text-primary font-bold underline" : "font-bold"
+                }
+                to={"/bookmarks"}
+              >
+                Bookmarks
+              </NavLink>
             </ul>
           </div>
           {/* theme controller start*/}
