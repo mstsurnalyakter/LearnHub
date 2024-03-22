@@ -9,6 +9,7 @@ export default {
           "50%": { backgroundPosition: "100% 50%" },
           "100%": { backgroundPosition: "0% 50%" },
         },
+
       },
       backgroundSize: {
         "300%": "300%",
